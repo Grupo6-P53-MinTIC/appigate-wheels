@@ -8,17 +8,17 @@ const authTypes = gql`
     }
 
     type Access{
-        acceess: String!
+        access: String!
     }
 
-    type CredentialsInput{
+    input CredentialsInput{
         username    : String! 
         password    : String!
     }
 
-    type SignUpInput{
+    input SignUpInput{
         username    : String!
-        passwoed    : String!
+        password    : String!
         name        : String!
         email       : String!
     }
