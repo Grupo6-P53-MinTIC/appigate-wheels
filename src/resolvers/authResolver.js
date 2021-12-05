@@ -7,6 +7,9 @@ const userResolver = {
             }
             else
                 return null;
+        },
+        AllUserDetailById: async (_, {}, {dataSources, userIdToken}) => {
+                return await dataSources.authAPI.getAllUsers();
         }
     },
     //para post-delete-update
@@ -15,8 +18,8 @@ const userResolver = {
             const authInput = {
                 username: userInput.username,
                 password: userInput.password,
-                name    : userInput.name,
-                email   : userInput.email
+                email   : userInput.email,
+                typeAccount: userInput.typeAccount
             }
             return await dataSources.authAPI.createUser(authInput);
         },
@@ -27,3 +30,5 @@ const userResolver = {
         refreshToken:(_,{token},{dataSources})=> dataSources.authAPI.refreshToken(token)
     }
 };
+
+module.exports = userResolver;
