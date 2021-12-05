@@ -1,6 +1,7 @@
 const { ApolloError } = require('apollo-server');
 const serverConfig = require('../server');
 const fetch = require('node-fetch');
+
 const authentication = async ({ req }) => {
     const token = req.headers.authorization || '';
     if (token == '')
@@ -8,7 +9,8 @@ const authentication = async ({ req }) => {
     else {
         try {
             let requestOptions = {
-                method: 'POST', headers: { "Content-Type": "application/json" },
+                method: 'POST', 
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ token }), redirect: 'follow'
             };
             let response = await fetch(
