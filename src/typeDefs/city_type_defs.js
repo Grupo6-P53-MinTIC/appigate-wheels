@@ -5,7 +5,7 @@ const cityTypeDefs =  gql `
     }
 
     extends type Query{
-        cityByNameCity(name_city:String!):[City]
+        getCity(name_city:String!):City!
     }
 
 `;

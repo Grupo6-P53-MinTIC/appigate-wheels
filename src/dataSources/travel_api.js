@@ -26,6 +26,10 @@ class TravelAPI extends RESTDataSource{
     async createTravel(newTravel){
         travel = new Object(JSON.parse(JSON.stringify(newTravel)));
         return await this.post('/TRAVELS',travel);
+    }
+
+    async getCityByName(name_city) {
+        return await this.get(`/getCity/${name_city}`);
 
     }
 }

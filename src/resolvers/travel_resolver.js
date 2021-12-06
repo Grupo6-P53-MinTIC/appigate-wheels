@@ -63,7 +63,10 @@ const travelResolver = {
             }
             return await dataSources.TravelAPI.newTravel(travelCreate);
     
-        }
+        },
+        getCity: async (_, { name_city }, { dataSources }) => {
+            return await dataSources.TravelAPI.getCityByname(name_city)
+        },
         
     }
 };
