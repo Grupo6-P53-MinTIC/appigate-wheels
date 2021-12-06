@@ -1,10 +1,5 @@
-//llamado de los type defs
+const authTypes = require('./authTypeDefs');
 const travelTypeDefs = require('./travel_type_defs');
 
-
-//union
-const schemaArrays = [travel_type_defs];
-
-
-//exportar
-module.exports = schemaArrays;
+const schemaArrays = [authTypes, travel_type_defs];
+module.exports     = schemaArrays
