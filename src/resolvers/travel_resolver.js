@@ -2,7 +2,7 @@ const travelResolver = {
     Query:{
         travelByIdtravel: async(_,{idTravel}, { dataSource, userIdToken }) => {
             if(idTravel == userIdToken)
-                return await dataSource.TravelAPI.getTravel(idTravel)
+                return await dataSource.travel_api.getTravel(idTravel)
             else 
                 return null
             
@@ -23,7 +23,7 @@ const travelResolver = {
                 seats      : travelget.seats,
                 price      : travelget.price
             }
-            return await dataSources.TravelAPI.getTravel(travelInput);
+            return await dataSources.travel_api.getTravel(travelInput);
         },
         
         readTravelToPlace: async (_,{TravelPlace},{dataSources})=>{
@@ -33,7 +33,7 @@ const travelResolver = {
                 passThrough : TravelPlace.passThrough,
                 published   : TravelPlace.published
             }
-            return await dataSources.TravelAPI.travelTo_place(placeInput);
+            return await dataSources.travel_api.travelTo_place(placeInput);
     
         },
 

@@ -9,17 +9,17 @@ class TravelAPI extends RESTDataSource{
 
     async getTravel(getTravel){
         travel = new Object(JSON.parse(JSON.stringify(getTravel)));
-        return await this.get('/travel/{manager_name}',travel);
+        return await this.get(`/travel/${manager_name}`,travel);
     }
 
     async getTravelPlace(travelTo_place){
         travel = new Object(JSON.parse(JSON.stringify(travelTo_place)));
-        return await this.get('/travel/{manager_name}',travel);
+        return await this.get(`/travel/${manager_name}`,travel);
     }
 
     async getTravelManager(travelManager_name){
         travel = new Object(JSON.parse(JSON.stringify(travelManager_name)));
-        return await this.get('/travels/{manager_name}}',travel);
+        return await this.get(`/travels/${manager_name}`,travel);
 
     }
 
