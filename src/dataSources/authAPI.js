@@ -11,33 +11,38 @@ class AuthAPI extends RESTDataSource{
        credentials = new Object(JSON.parse(JSON.stringify(credentials)));
        return await this.post('/login/',credentials)
     }
- //'user/'
+ //'user/register'
     async createUser(user){
       user = new Object(JSON.parse(JSON.stringify(user)));
       return await this.post('/user/',user);
     }
-   //  Falata crear un serializador que limite los campos y no permita actualizar username y password 
-    async updateUser(user){
-      user = new Object(JSON.parse(JSON.stringify(user)));
-       return await this.put(`/user/${user.id}` , user);
-    }
-    async deleteUser(userId){
-       return await this.delete(`/user/${userId}`);
-    }
  // 'user/<int:pk>/'
-    async getUser(userId){
-      return await this.get(`/user/${userId}/`);
+   async getUser(userId){
+      return await this.get(`/user/${userId}`);
     }
  // 'users/'
     async getAllUsers(){
       return await this.get(`/users/`);
     }
  // 'refresh/'
-   async refreshToken(token){
-      token = new Object(JSON.parse(JSON.stringify(token)));
-      return await this.post('/refresh/',token);
+   async refreshToken(refresh) {
+      refresh = new Object(JSON.parse(JSON.stringify({ refresh: refresh })));
+      return await this.post(`/refresh/`, refresh);
    }
-
+   //--------------------------------------------------------------------------
+   // Get all drivers 
+   async getAllDrivers(){
+      return await this.get(`/drivers`)
+   }
+   // Get a car by driverID
+   async getCarByDriverID(idDriver) {
+      console.log(idDriver);
+      return await this.get(`/car-driver/${idDriver}`);
+   }
+   // Get all cars 
+   async getAllCars(){
+      return await this.get(`/cars`);
+   }
 } 
 
 module.exports = AuthAPI

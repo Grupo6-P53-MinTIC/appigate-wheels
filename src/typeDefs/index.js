@@ -1,5 +1,8 @@
-const authTypes = require('./authTypeDefs');
-const travelTypeDefs = require('./travel_type_defs');
+const authTypesDefs = require('./authTypeDefs');
+const cityTypeDefs = require('./cityTypeDefs');
+const travelTypeDefs = require ('./travelTypeDefs');
+const reservationTypeDefs = require ('./reservationTypeDefs');
 
-const schemaArrays = [authTypes, travel_type_defs];
+const schemaArrays = [authTypesDefs, cityTypeDefs, travelTypeDefs, reservationTypeDefs];
 module.exports     = schemaArrays
+
