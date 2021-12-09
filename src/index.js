@@ -4,6 +4,8 @@ const typeDefs = require("./typeDefs");
 const resolvers = require("./resolvers");
 const authentication = require("./utils/authentication" );
 const AuthAPI = require("./dataSources/authAPI");
+const CityAPI = require("./dataSources/cityAPI")
+const TravelAPI = require("./dataSources/travelAPI")
 
 
 const server = new ApolloServer({
@@ -12,6 +14,8 @@ const server = new ApolloServer({
     resolvers,
     dataSources: () => ({
         authAPI: new AuthAPI(),
+        cityApi: new CityAPI(),
+        travelAPI : new TravelAPI(),
     }),
     introspection: true,
     playground: true

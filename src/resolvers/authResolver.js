@@ -3,6 +3,7 @@ const userResolver = {
     Query: {                                        //userIdToken -> (retorno de authentications.js)
         userDetailById: async (_, {userId}, {dataSources, userIdToken}) => {
             if(userId == userIdToken){
+                dataSources.a
                 return await dataSources.authAPI.getUser(userId); 
             }
             else

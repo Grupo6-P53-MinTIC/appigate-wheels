@@ -1,6 +1,6 @@
 const {gql} = require('apollo-server');
 
-const authTypes = gql `
+const authTypesDefs = gql `
     type Tokens {
         refresh: String!
         access : String!
@@ -70,4 +70,4 @@ const authTypes = gql `
         refreshToken(refresh : String!): Access
     }
 `
-module.exports = authTypes;
+module.exports = authTypesDefs;
