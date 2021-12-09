@@ -5,3 +5,4 @@ const reservationTypeDefs = require ('./reservationTypeDefs');
 
 const schemaArrays = [authTypesDefs, cityTypeDefs, travelTypeDefs, reservationTypeDefs];
 module.exports     = schemaArrays
+
