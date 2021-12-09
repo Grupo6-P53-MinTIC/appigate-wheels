@@ -14,12 +14,11 @@ const travelTypeDefs = gql`
         price           :String!
     }
     input TravelInput{
-        idTravel        :String!
         idDriver        :String!
         nameDriver      :String!
         fromPlace       :String!
         toPlace         :String!
-        passThrough     :String!
+        passThrough     :String
         published       :String!
         dateTravel      :String!
         seats           :String!

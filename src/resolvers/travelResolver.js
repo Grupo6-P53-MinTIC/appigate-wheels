@@ -20,9 +20,9 @@ const travelResolver = {
         }
     },
     Mutation: {
-        // addCity: async (_, { city }, { dataSources }) => {
-        //     return dataSources.cityApi.createCity(city)
-        // }
+        addTravel: async (_, { travel }, { dataSources }) => {
+            return dataSources.travelAPI.postTravel(travel)
+        }
     }
 }
 module.exports = travelResolver;

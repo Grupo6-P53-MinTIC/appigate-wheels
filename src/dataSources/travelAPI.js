@@ -25,6 +25,9 @@ class TravelAPI extends RESTDataSource {
     async getTravelByDriver(idDriver) {
         return await this.get(`/travels-by-driver/${idDriver}`);
     }
+    async postTravel(travel){
+        return await this.post('/travel', travel);
+    }
 
 }
 module.exports = TravelAPI;
