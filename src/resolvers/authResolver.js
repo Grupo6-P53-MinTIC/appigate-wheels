@@ -47,6 +47,8 @@ const userResolver = {
  
         },
         refreshToken: (_, {refresh}, { dataSources }) => dataSources.authAPI.refreshToken(refresh),
+
+        getUserByToken: (_, { token }, { dataSources }) => dataSources.authAPI.getUserByToken(token),
         
     }
 };

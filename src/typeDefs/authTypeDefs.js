@@ -68,6 +68,7 @@ const authTypesDefs = gql `
         signUpUser(userInput : SignUpInput): Tokens!
         logIn(credentials: CredentialsInput): Tokens!
         refreshToken(refresh : String!): Access
+        getUserByToken(token : String!): UserDetail
     }
 `
 module.exports = authTypesDefs;

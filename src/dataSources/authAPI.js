@@ -16,6 +16,11 @@ class AuthAPI extends RESTDataSource{
       user = new Object(JSON.parse(JSON.stringify(user)));
       return await this.post('/user/',user);
     }
+ // 'userByToken'
+   async getUserByToken(token){
+      token = new Object(JSON.parse(JSON.stringify({ token: token })));
+      return await this.post(`/userByToken/`, token);
+    }
  // 'user/<int:pk>/'
    async getUser(userId){
       return await this.get(`/user/${userId}`);
