@@ -66,9 +66,9 @@ const authTypesDefs = gql `
     }
     type Mutation{
         signUpUser(userInput : SignUpInput): Tokens!
-        logIn(credentials: CredentialsInput): Tokens!
+        logIn(credentials    : CredentialsInput): Tokens!
         refreshToken(refresh : String!): Access
-        getUserByToken(token : String!): UserDetail
+        getUserByToken(token : String!): [UserDetail]
     }
 `
 module.exports = authTypesDefs;

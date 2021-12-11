@@ -41,7 +41,6 @@ class AuthAPI extends RESTDataSource{
    }
    // Get a car by driverID
    async getCarByDriverID(idDriver) {
-      console.log(idDriver);
       return await this.get(`/car_driver/${idDriver}`);
    }
    // Get all cars 
