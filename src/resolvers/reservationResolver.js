@@ -3,11 +3,11 @@ const reservationResolver = {
         getReservationById: async (_, { id }, { dataSources }) => {
             return dataSources.reservationAPI.getReservationById(id);
         },
-        getReservationByUsernamePassenger: async (_, { usernamePassenger }, { dataSources }) => {
-            return dataSources.reservationAPI.getReservationByUsernamePassenger(usernamePassenger);
+        getReservationByIdPassenger: async (_, { idPassenger }, { dataSources }) => {
+            return dataSources.reservationAPI.getReservationByIdPassenger(idPassenger);
         },
-        getReservationByUsernameDriver: async (_, { usernameDriver }, { dataSources }) => {
-            return dataSources.reservationAPI.getReservationByUsernameDriver(usernameDriver);
+        getReservationByIdDriver: async (_, { idDriver }, { dataSources }) => {
+            return dataSources.reservationAPI.getReservationByIdDriver(idDriver);
         },
         getReservationByIdTravel: async (_, { idTravel }, { dataSources }) => {
             return dataSources.reservationAPI.getReservationByIdTravel(idTravel);

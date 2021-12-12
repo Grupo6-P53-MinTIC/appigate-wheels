@@ -14,7 +14,7 @@ const reservationTypeDefs = gql`
         date                :String
     }
     input ReservationInput{
-        id                  :String!
+        id                  :String
         idTravel            :String!
         idDriver            :String!
         idPassenger         :String!
@@ -26,14 +26,14 @@ const reservationTypeDefs = gql`
         date                :String
     }
     extend type Query{
-        getReservationById(id:String!)                                  :Reservation!
-        getReservationByUsernamePassenger(usernamePassenger:String!)    :[Reservation]
-        getReservationByUsernameDriver(usernameDriver:String!)          :[Reservation]
+        getReservationById(id:String!)                                  : Reservation!
+        getReservationByIdPassenger(idPassenger:String!)                :[Reservation]
+        getReservationByIdDriver(idDriver:String!)                      :[Reservation]
         getReservationByIdTravel(idTravel:String!)                      :[Reservation]
         
     }
     extend type Mutation{
-        addReservation(reservation: ReservationInput!)      :Reservation
+        addReservation(reservation: ReservationInput!)                  : Reservation
     }
 `;
 module.exports = reservationTypeDefs;

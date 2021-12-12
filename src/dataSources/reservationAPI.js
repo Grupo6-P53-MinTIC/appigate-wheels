@@ -9,11 +9,11 @@ class ReservationAPI extends RESTDataSource {
     async getReservationById(id) {
         return await this.get(`/reservation-byId/${id}`);
     }
-    async getReservationByUsernamePassenger(usernamePassenger) {
-        return await this.get(`/reservation-by-usernamePassenger/${usernamePassenger}`);
+    async getReservationByIdPassenger(idPassenger) {
+        return await this.get(`/reservation-by-idPassenger/${idPassenger}`);
     }
-    async getReservationByUsernameDriver(usernameDriver) {
-        return await this.get(`/reservation-by-usernameDriver/${usernameDriver}`);
+    async getReservationByIdDriver(idDriver) {
+        return await this.get(`/reservation-by-idDriver/${idDriver}`);
     }
     async getReservationByIdTravel(idTravel) {
         return await this.get(`/reservation-by-IdTravel/${idTravel}`);
