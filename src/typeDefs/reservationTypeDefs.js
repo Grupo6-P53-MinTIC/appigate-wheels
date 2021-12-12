@@ -11,7 +11,7 @@ const reservationTypeDefs = gql`
         price               :String
         seats               :Int!
         state               :String!
-        dateTravel          :String!
+        dateTravel          :String
         date                :String!
     }
     input ReservationInput{
