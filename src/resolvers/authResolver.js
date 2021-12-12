@@ -1,12 +1,8 @@
 const userResolver = {
     // para gets
     Query: {                                        //userIdToken -> (retorno de authentications.js)
-        userDetailById: async (_, {userId}, {dataSources, userIdToken}) => {
-            if(userId == userIdToken){
+        userDetailById: async (_, {userId}, {dataSources}) => {
                 return await dataSources.authAPI.getUser(userId); 
-            }
-            else
-                return null;
         },
         AllUserDetail: async (_, __, {dataSources}) => {
                 return await dataSources.authAPI.getAllUsers();
