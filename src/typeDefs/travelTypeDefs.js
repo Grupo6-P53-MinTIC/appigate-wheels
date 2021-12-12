@@ -44,6 +44,7 @@ const travelTypeDefs = gql`
     extend type Mutation{
         addTravel(travel: TravelInput!)             : Travel!
         updateTravel(travel: TravelUpdateInput!)    : Travel
+        deleteTravel(idTravel: String!)             : String
     }
 `;
 module.exports = travelTypeDefs;

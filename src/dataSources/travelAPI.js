@@ -28,6 +28,9 @@ class TravelAPI extends RESTDataSource {
     async postTravel(travel){
         return await this.post('/travel', travel);
     }
+    async deleteTravel(idTravel){
+        return await this.delete(`/travel/${idTravel}`);
+    }
     async updateTravel(travel){
         let id = travel.idTravel;
         return await this.put(`/travel/${id}`, travel);

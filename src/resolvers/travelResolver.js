@@ -25,6 +25,9 @@ const travelResolver = {
         },
         updateTravel: async (_, { travel }, { dataSources }) => {
             return dataSources.travelAPI.updateTravel(travel)
+        },
+        deleteTravel: async (_, { idTravel }, { dataSources }) => {
+            return dataSources.travelAPI.deleteTravel(idTravel)
         }
     }
 }
