@@ -22,7 +22,7 @@ const server = new ApolloServer({
     playground: true
 })
 
-server.listen(process.env.PORT || 4000).then( 
+server.listen(process.env.PORT || 4040).then( 
     ({url})=>{
         console.log(`Server listening on port ${process.env.PORT}`);
         console.log(`Server ready at ${url}`);

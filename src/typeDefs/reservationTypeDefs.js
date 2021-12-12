@@ -4,17 +4,23 @@ const reservationTypeDefs = gql`
     type Reservation{
         id                  :String!
         idTravel            :String!
-        usernameDriver      :String!
-        usernamePassenger   :String!
+        idDriver            :String!
+        idPassenger         :String!
+        toPlace             :String!
+        fromPlace           :String!
+        price               :String!
         seats               :Int!
         state               :String
         date                :String
     }
     input ReservationInput{
-        id                  :String
+        id                  :String!
         idTravel            :String!
-        usernameDriver      :String!
-        usernamePassenger   :String!
+        idDriver            :String!
+        idPassenger         :String!
+        toPlace             :String!
+        fromPlace           :String!
+        price               :String!
         seats               :Int!
         state               :String
         date                :String
