@@ -6,6 +6,9 @@ class ReservationAPI extends RESTDataSource {
         super();
         this.baseURL = serverConfig.travels_api_url;
     }
+    async getAllReservations() {
+        return await this.get(`/reservations`);
+    }
     async getReservationById(id) {
         return await this.get(`/reservation-byId/${id}`);
     }
@@ -21,6 +24,8 @@ class ReservationAPI extends RESTDataSource {
     async postReservation(reservation) {
         return await this.post('/reservation', reservation);
     }
-
+    async deleteReservation(idReservation) {
+        return await this.delete(`/reservation/${idReservation}`);
+    }
 }
 module.exports = ReservationAPI;

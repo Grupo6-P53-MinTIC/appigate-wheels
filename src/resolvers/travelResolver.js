@@ -3,7 +3,7 @@ const travelResolver = {
         getTravels: async (_, __, { dataSources }) => {
             return dataSources.travelAPI.getTravels();
         },
-        getTravelById: async (_, { id}, { dataSources }) => {
+        getTravelById: async (_, {id}, { dataSources }) => {
             return dataSources.travelAPI.getTravelById(id);
         },
         getTravelByToPlace: async (_, { toPlace}, { dataSources }) => {
@@ -22,6 +22,9 @@ const travelResolver = {
     Mutation: {
         addTravel: async (_, { travel }, { dataSources }) => {
             return dataSources.travelAPI.postTravel(travel)
+        },
+        updateTravel: async (_, { travel }, { dataSources }) => {
+            return dataSources.travelAPI.updateTravel(travel)
         }
     }
 }

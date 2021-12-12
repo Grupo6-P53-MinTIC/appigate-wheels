@@ -1,5 +1,8 @@
 const reservationResolver = {
     Query: {
+        getAllReservations: async (_, __, { dataSources }) => {
+            return dataSources.reservationAPI.getAllReservations();
+        },
         getReservationById: async (_, { id }, { dataSources }) => {
             return dataSources.reservationAPI.getReservationById(id);
         },
@@ -16,6 +19,9 @@ const reservationResolver = {
     Mutation: {
         addReservation: async (_, { reservation }, { dataSources }) => {
             return dataSources.reservationAPI.postReservation(reservation)
+        },
+        deleteReservation: async (_, { idReservation }, { dataSources }) => {
+            return dataSources.reservationAPI.deleteReservation(idReservation)
         }
     }
 }
