@@ -1,6 +1,9 @@
 const userResolver = {
     // para gets
     Query: {                                        //userIdToken -> (retorno de authentications.js)
+        userBasicDetailById: async (_, {userId}, {dataSources}) => {
+                return await dataSources.authAPI.getBasicUser(userId); 
+        },
         userDetailById: async (_, {userId}, {dataSources}) => {
                 return await dataSources.authAPI.getUser(userId); 
         },

@@ -47,6 +47,14 @@ const authTypesDefs = gql `
         phoneNumber: String
         typeAccount: String
     }
+    type BasicUserDetail{
+        id: Int
+        username: String
+        name: String
+        lastName: String
+        gender: String
+        typeAccount: String
+    }
     type CarDetail{
         carRegistrationNumber: String!
         licenseNumber: String
@@ -58,11 +66,12 @@ const authTypesDefs = gql `
     }
 
     type Query{
-        userDetailById(userId: Int!):UserDetail
-        carByDriverId(idDriver: Int!): [CarDetail]
-        AllUserDetail:[UserDetail]
-        AllDriversDetail:[UserDetail]
-        AllCarsDetail:[CarDetail]
+        userBasicDetailById(userId:Int!):BasicUserDetail
+        userDetailById(userId: Int!)    :UserDetail
+        carByDriverId(idDriver: Int!)   :[CarDetail]
+        AllUserDetail                   :[UserDetail]
+        AllDriversDetail                :[UserDetail]
+        AllCarsDetail                   :[CarDetail]
     }
     type Mutation{
         signUpUser(userInput : SignUpInput): Tokens!
